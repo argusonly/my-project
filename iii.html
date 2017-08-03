@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	*{
+		list-style: none;
+	}
+	div{
+		border: 1px solid #000;
+
+	}
+	.main{
+		width:400px;
+		padding: 10px;
+		background: red;
+		overflow: hidden;
+	}
+	#left{
+		width: 45%;
+		height: 1000px;
+		float: left;
+	}
+	#right{
+		width:45%;
+		height: 1000px;
+		float: left;
+	}
+	ul{
+		border:1px solid yellow;
+	}
+	ul li{
+		border:1px solid blue;
+		cursor: pointer;
+	}
+ </style>
+</head>
+<body>
+<div class="main" >
+
+<ul>
+	<li id="first-1">第一</li>
+	<li id="first-2">第二</li>
+	<li id="first-3">第三</li>
+</ul>
+
+ 	<div id="left">1<br />2<br />3<br />4<br />5<br /></div>
+	<div id="right"><b>我是一行内容</b><br /><strong>我是一行内容</strong></div>
+</div>
+
+<script>
+document.getElementsByTagName("ul")[0].addEventListener("click",function(e){
+	if(e.target&&e.target.nodeName =='LI'){
+		alert("您点击了"+e.target.id)
+	}
+})
+</script>
+</body>
+</html>
