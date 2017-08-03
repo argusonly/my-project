@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<style>
-	*{margin:0;padding:0;}
+		*{list-style-type: none; margin:0;padding:0;}
 		body,html{
 			height:100%;
 		}
@@ -64,37 +64,37 @@
 	</style>
 </head>
 <body>
-<div id="header" class="screen">
-	<span>argudfdfs</span>
-</div>
-<div id="contents" class="screen">
-	<div class="box">
+	<div id="header" class="screen">
+		<span>argudfdfs</span>
 	</div>
-	<div class="radius">
+	<div id="contents" class="screen">
+		<div class="box">
+		</div>
+		<div class="radius">
+			
+		</div>
+	</div>
+	<div id="footer" class="screen">
+		<span>buhao</span>
+	</div>	
+	<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+	<script>
+		$(window).ready(function(){
+			$("#footer").remove()
+			$("#contents").after("<div id='footer' class='screen'><span>buhao</span></div>")
+		})
+		$(window).scroll(function () {
+			var i;
+			if($(window).scrollTop()%768>100){
+				i = parseInt($(window).scrollTop()/638)+1;
+			}else{
+				i=parseInt($(window).scrollTop()/638);
+			}
+			console.log(i)
+			$(".screen").removeClass("active");
+			$(".screen").eq(i).addClass("active");
+		})
 		
-	</div>
-</div>
-<div id="footer" class="screen">
-	<span>buhao</span>
-</div>	
-<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
-<script>
-$(window).ready(function(){
-	$("#footer").remove()
-	$("#contents").after("<div id='footer' class='screen'><span>buhao</span></div>")
-})
-$(window).scroll(function () {
-	var i;
-	if($(window).scrollTop()%768>100){
-		i = parseInt($(window).scrollTop()/638)+1;
-	}else{
-		i=parseInt($(window).scrollTop()/638);
-	}
-	console.log(i)
-	$(".screen").removeClass("active");
-	$(".screen").eq(i).addClass("active");
-})
-	
-</script>
+	</script>
 </body>
 </html>
